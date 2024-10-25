@@ -1,0 +1,427 @@
+/* ============================================================================================================================= */
+/* Tags gerais */
+
+* { margin: 0; padding: 0; }
+
+Body {
+	font-family: "Trebuchet MS", Georgia, "Times New Roman", Times, serif;
+	font-size: 13px;
+	color: #8D8573;
+	background: #FFF;
+}
+
+Img, Fieldset { border: none; }
+
+A { text-decoration: none; color: #2b1515; }
+A.acesso { position: absolute; top: -1000px; }
+
+Input, Select, Textarea { font-family: "Trebuchet MS", Georgia, "Times New Roman", Times, serif; font-size: 12px; color: #8D8573; }
+
+/* ============================================================================================================================= */
+/* Layout */
+
+#layout { width: 90%; min-width: 980px; margin: 0 auto; }
+
+/* ============================================================================================================================= */
+/* Topo */
+
+#topo { width: 100%; }
+
+/* ============================================================================================================================= */
+/* Cabeçalho */
+
+#topo #cabecalho {
+	position: relative;
+	width: 100%;
+	height: 120px;
+	background: #2b1515 url(../imagens/topo_desenho.png) right top no-repeat;
+}
+
+/* Logo */
+#topo #cabecalho A#logo {
+	float: left;
+	width: 365px;
+	height: 61px;
+	margin: 20px 0px 0px 20px;
+	text-indent:-1000px;
+	overflow: hidden;
+	background: url(../imagens/topo_logo.png) center no-repeat;
+}
+
+/* Links */
+#topo #cabecalho Ul { list-style: none; float: right; display: inline; margin: 40px 60px 0px 0px; }
+#topo #cabecalho Ul Li { float: left; padding: 0px 10px; border-left: 1px solid #FFF; }
+#topo #cabecalho Ul Li:first-child { border: none; }
+#topo #cabecalho Ul Li A {
+	display: block;
+	color: #FFF;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+#topo #cabecalho Ul Li A:hover { color: #8D8573; }
+
+/* Intranet */
+#topo #cabecalho Ul.intranet { position: absolute; right: 74px; bottom: 20px; margin: 0px; }
+#topo #cabecalho Ul.intranet Li A { font-size: 11px; }
+
+/* Área restrita */
+/*
+#topo #cabecalho Fieldset {
+	position: absolute;
+	right: 70px;
+	bottom: 20px;
+	color: #FFF;
+	text-transform: lowercase;
+	font-size: 11px;
+}
+
+#topo #cabecalho Fieldset B {
+	position: relative;
+	float: left;
+	height: 16px;
+	margin-right: 10px;
+	padding-right: 10px;
+	line-height: 16px;
+	text-align: right;
+	font-weight: normal;
+	border-right: 1px solid #FFF;
+}
+#topo #cabecalho Fieldset B Span {
+	position: absolute;
+	top: 0px;
+	right: 10px;
+	height: 16px;
+	width: 200px;
+}
+
+#topo #cabecalho Fieldset .erro { color: #900; }
+
+#topo #cabecalho Fieldset Label, #topo #cabecalho Fieldset Input { float: left; margin-right: 10px; }
+#topo #cabecalho Fieldset Label { line-height: 16px; }
+#topo #cabecalho Fieldset Input { color: #FFF; width: 75px; height: 16px; background: url(../imagens/aplha_15.png); border: none; }
+#topo #cabecalho Fieldset Input:focus { background-image: url(../imagens/aplha_30.png); }
+
+#topo #cabecalho Fieldset A {
+	float: left;
+	display: block;
+	width: 20px;
+	height: 16px;
+	cursor: pointer;
+	text-indent: -1000px;
+	overflow: hidden;
+	background: url(../imagens/icone_setaDireitaBranco.gif) center no-repeat;
+}
+*/
+
+/* ============================================================================================================================= */
+/* Menu */
+
+#topo #menu {
+	float: left;
+	width: 100%;
+	height: 30px;
+	padding-top: 10px;
+	margin-top: 10px;
+	background: #2b1515;
+}
+
+/* Links */
+#topo #menu Ul { list-style: none; width: 980px; margin: 0 auto; }
+#topo #menu Ul Li { float: left; padding: 0px 15px; border-left: 1px solid #FFF; }
+#topo #menu Ul Li:first-child { border: none; }
+#topo #menu Ul Li A {
+	height: 20px;
+	line-height: 20px;
+	color: #FFF;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+#topo #menu Ul Li A:hover { color: #8D8573; }
+
+/* Links destacado */
+#layout #topo Ul Li A.engine { color: #8D8573; }
+
+/* ============================================================================================================================= */
+/* Conteúdo */
+
+#conteudo { position: relative; float: left; width: 100%; min-height: 320px; margin: 20px 0px; }
+
+/* Botão voltar */
+#conteudo A#voltar {
+	position: absolute;
+	right: 0px;
+	top: -10px;
+	font-size: 12px;
+	color: #8D8573;
+	z-index: 1000;
+}
+#conteudo A#voltar:hover {
+	color: #2b1515;
+	text-decoration: none;
+	padding-left: 14px;
+	background: url(../imagens/icone_setaEsquerda.gif) left center no-repeat;
+}
+
+/* ============================================================================================================================= */
+/* Painel de imagens das seções */
+
+#conteudo #painelEngine { float: right; margin: 20px 0px 0px 20px; }
+#conteudo #painelEngine Img { float: none; margin: 0; } 
+
+/* ============================================================================================================================= */
+/* Texto geral */
+
+#conteudo { line-height: 23px; }
+#conteudo H1 { font-size: 1.3em; color: #2b1515; }
+#conteudo H2 B { color: #2b1515; }
+#conteudo H3 { font-size: 1.2em; }
+#conteudo P, #conteudo H2 { font-size: 1em; line-height: 23px; margin: 20px 0px; }
+#conteudo Img { float: right; margin-left: 20px; }
+#conteudo A { font-weight: bold; }
+#conteudo A:hover { text-decoration: underline; }
+#conteudo Ul { margin-top: 20px; }
+#conteudo Ul Li { margin: 20px; }
+
+/* ============================================================================================================================= */
+/* Arquivos */
+
+#conteudo Ul.arquivos { list-style: none; margin: 20px 0px 0px 0px; }
+#conteudo Ul.arquivos Li { margin: 5px 20px; }
+#conteudo Ul.arquivos Li A { padding-left: 20px; background: url(../imagens/icone_arquivo.gif) left center no-repeat; }
+#conteudo Ul.arquivos Li A:hover { background-image: url(../imagens/icone_arquivoOn.gif); }
+
+/* ============================================================================================================================= */
+/* Listagem */
+
+#conteudo Ul.listar { list-style: none; margin: 20px 0px; }
+#conteudo Ul.listar * { font-size: 1em; margin: 0; }
+#conteudo Ul.listar Li A { color: #8D8573; line-height: 22px; }
+#conteudo Ul.listar Li H1 { font-size: 1.3em; margin: 20px 0px; }
+#conteudo Ul.listar Li H2 { display: inline; color: #2b1515; }
+
+/* Imagem da seção */
+#layout #conteudo Img.engine { float: right; margin: 20px 0px 0px 20px; }
+
+/* ============================================================================================================================= */
+/* Paginar */
+
+#conteudo #paginar {
+	float: left;
+	position: relative;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 20px;
+	padding-top: 6px;
+	border-top: 1px solid #8D8573;
+}
+#conteudo #paginar A { display: block; color: #8D8573; font-size: 10px; text-transform: lowercase; }
+#conteudo #paginar A:hover { color: #2b1515; }
+#conteudo #paginar A#anterior { float: left; }
+#conteudo #paginar A#proximo { float: right; }
+#conteudo #paginar Small {
+	position: absolute;
+	display: block;
+	left: 50%;
+	width: 100px;
+	height: 20px;
+	line-height: 20px;
+	margin-left: -50px;
+	text-align: center;
+}
+
+/* ============================================================================================================================= */
+/* Formulários */
+
+#conteudo Form { float: left; width: 500px; }
+
+#conteudo Form Fieldset { float: left; width: 48%; margin: 10px 1%; }
+#conteudo Form Fieldset.msg { width: 98%; }
+
+#conteudo Form Label { display: block; width: 100%; height: 23px; line-height: 23px; font-weight: bold; }
+#conteudo Form Input, #conteudo Form Select, #conteudo Form Textarea { width: 100%; height: 21px; border: 1px solid #8D8573; }
+#conteudo Form Textarea { height: 150px; }
+#conteudo Form Select { height: 23px; }
+
+/* Enviar */
+#conteudo Form A {
+	float: right;
+	display: block;
+	height: 27px;
+	line-height: 27px;
+	padding: 0px 15px;
+	color: #2b1515;
+	background: #8D8573;
+	cursor: pointer;
+}
+#conteudo Form A:hover { color: #8D8573; background: #2b1515; text-decoration: none; }
+
+/* Mensagem enviada */
+#conteudo Form Small {
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	text-indent: 20px;
+	margin-top: 10px;
+	background: url(../imagens/formOk.gif) left center no-repeat;
+}
+
+/* ================================================================================================ */
+/* check form */
+
+#conteudo Form Label.erro { background: url(../imagens/formErro.gif) right center no-repeat; }
+#conteudo Form Label.ok { background: url(../imagens/formOk.gif) right center no-repeat; }
+
+#conteudo Form Input.erro, #conteudo Form Textarea.erro { border: 1px solid #CC0000; }
+#conteudo Form Input.ok, #conteudo Form Textarea.ok { border: 1px solid #61C250; }
+
+/* ============================================================================================================================= */
+/* Home Page */
+
+/* Painel de imagens */
+#conteudo.home #painel { position: relative; width: 980px; margin: 0 auto; }
+#conteudo.home #painel Img { float: none; margin: 0; } 
+
+/* Legenda da imagem */
+#conteudo.home #painel Dl {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	color: #2b1515;
+	border-top: 1px solid #FFF;
+	background: url(../imagens/aplha_60.png);
+}
+#conteudo.home #painel Dl * { margin: 10px; }
+#conteudo.home #painel Dl Dt { font-weight: bold; }
+
+/* ============================================================================================================================= */
+/* Produto */
+
+/* Imagem grande */
+#conteudo.produto Img { display: block; float: none; margin: 20px auto 20px auto; }
+
+/* Lisrar linhas */
+#conteudo.produto Dl Dt {
+	display: block;
+	font-size: 1.3em;
+	color: #2b1515;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+}
+#conteudo.produto Dl Dd { margin-bottom: 20px; display: none; }
+#conteudo.produto Dl Dd Ul { list-style: none; margin: 0px 20px; }
+#conteudo.produto Dl Dd Ul Li { margin: 0px; }
+#conteudo.produto Dl Dd Ul Li A { color: #8D8573; }
+
+/* Listar produtos */
+#conteudo.produto H2 { margin-top: 0px; }
+#conteudo.produto Ul.listar { float: left; width: 100%; }
+#conteudo.produto Ul.listar Li { float: left; width: 20%; text-align: center; margin: 20px 0; min-height: 300px; } 
+#conteudo.produto Ul.listar * { font-size: 13px; }
+#conteudo.produto Ul.listar Li A Img { margin: 0 auto 10px auto; } 
+
+/* ============================================================================================================================= */
+/* Vídeo */
+
+#conteudo.video Div { text-align: center; margin-top: 20px; }
+
+/* ============================================================================================================================= */
+/* Dúvidas */
+
+#conteudo.faq Ul.listar Li A { margin: 20px; }
+
+/* ============================================================================================================================= */
+/* Onde comprar */
+
+#conteudo.onde Dl { margin: 20px 0px; }
+#conteudo.onde Dl Dt { clear: both; font-weight: bold; }
+#conteudo.onde Dl Dd { margin: 20px; line-height: 20px; }
+#conteudo.onde Dl Dd P { clear: left; margin: 10px 0px 0px 0px; }
+
+/* ============================================================================================================================= */
+/* Representantes */
+
+/* Mapa em flash */
+#conteudo.representante #mapa { float: right; width: 400px; height: 370px; }
+
+/* Selects */
+#conteudo.representante Fieldset { float: left; width: 500px; margin-top: 20px; }
+#conteudo.representante Fieldset Legend { font-weight: bold; margin-bottom: 10px; color: #8D8573; }
+#conteudo.representante Fieldset Select { width: 238px; margin: 10px 0px; }
+
+/* Listagem */
+#conteudo.representante #resultado { clear: left; }
+#conteudo.representante #resultado Dl { display: block; margin-top: 20px; }
+#conteudo.representante #resultado Dl Dt {
+	border-top: 1px solid #8D8573;
+	padding: 10px 0px;
+	margin-top: 10px;
+	font-weight: bold;
+	color: #2b1515;
+}
+#conteudo.representante #resultado Dl Dd { line-height: 23px; }
+#conteudo.representante #resultado Dl Dd P { margin: 0; }
+
+/* ============================================================================================================================= */
+/* Galeria */
+
+#conteudo.confraria Div Img { float: none; margin: 0; }
+
+/* Imagem grande */
+#conteudo.confraria Div.frame {
+	display: block;
+	width: 940px;
+	margin: 20px auto;
+	text-align: center;
+}
+#conteudo.confraria #zoom {
+	display: inline;
+	text-align: center;
+	background-position: center;
+	background-repeat: no-repeat;
+} 
+
+/* Miniaturas */
+#conteudo.confraria #thumb { width: 940px; margin: 0 auto; }
+#conteudo.confraria #thumb Ul { float: left; list-style: none; margin: 0 -14.165px; } 
+#conteudo.confraria #thumb Ul Li { float: left; width: 110px; margin: 0 14.165px; }
+#conteudo.confraria #thumb Ul Li Img { cursor: pointer; }
+
+/* Paginação */
+#conteudo.confraria #thumb Div { clear: both; position: relative; height: 40px; line-height: 40px; }
+#conteudo.confraria #thumb Div A { display: block; padding: 0px 10px; font-size: 12px; }	
+#conteudo.confraria #thumb Div A.anterior { float: left; background:url(../imagens/icone_setaEsquerda.gif) left center no-repeat; }
+#conteudo.confraria #thumb Div A.proximo { float: right; background:url(../imagens/icone_setaDireita.gif) right center no-repeat; }
+#conteudo.confraria #thumb Div Small { position: absolute; left: 50%; width: 100px; margin-left: -50px; text-align: center; }
+
+/* ============================================================================================================================= */
+/* Contato */
+
+#conteudo.contato #endereco { float: right; width: 440px; margin-bottom: 20px; }
+#conteudo.contato #endereco #mapa { width: 100%; height: 350px; margin-bottom: 20px; }
+#conteudo.contato #endereco Img.mapa { float: none; margin: 0px 0px 20px 0px; }
+#conteudo.contato #endereco P { clear: both; margin: 0; }
+#conteudo.contato #endereco Address { font-style: normal; margin: 5px 0px; }
+
+/* ============================================================================================================================= */
+/* Rodapé */
+
+#rodape { clear: both; width: 100%; height: 30px; border-top: 1px solid #8D8573; }
+
+/* copyright */
+#rodape Small { float: left; height: 14px; line-height: 30px; }
+
+/* logo CDI */
+#rodape A#cdi {
+	float: right;
+	display: block;
+	width: 23px;
+	height: 30px;
+	background: url(../imagens/rodape_cdi.png) center no-repeat;
+	text-indent: -1000px;
+	overflow: hidden;
+}
+

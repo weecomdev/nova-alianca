@@ -1,0 +1,75 @@
+body {	
+	background: url(../images/background-login.jpg) repeat top;
+	background-attachment: fixed; font-family: Arial; font-size: 12px;
+}
+
+.content {
+	margin-left: 30px; margin-right: 30px;
+	background: #FFFFFF url('../images/back-content.jpg') no-repeat top;
+}
+
+.logotipo {
+	padding-top: 60px; padding-bottom: 50px;
+}
+
+.rodape-login {
+	padding: 20px; margin-left: 30px; margin-right: 30px; margin-top: 200px;
+	background: url('../images/metadados.jpg') no-repeat right center; height: 180px;
+}
+
+.box-login {
+	background: url('../images/box-login.jpg') no-repeat center center;
+	width: 290px; height: 133px; margin-left: 238px;
+}
+
+.box-cadastrar {
+	background: url('../images/box-cadastrar.jpg') no-repeat top center;
+	width: 400px; height: 180px; margin-left: 200px; 
+}
+
+.titulo-login {
+	width: 151px; height: 19px; margin-left: 238px;
+}
+
+.titulo-cadastrar{
+	width: 151px; height: 19px; margin-left: 200px;
+}
+
+.ok {
+	height: 20px; width: 80px; background: url('../images/ok.jpg') no-repeat;
+	border: none; cursor: pointer;
+}
+
+.ok-login {
+	margin-top: 10px;
+}
+
+.cpf-senha {
+	width: 100px; float: left; margin-top: 12px;
+	text-align: right; margin-right: 5px; margin-left: 15px;
+}
+
+.cpf-senha-login {
+	width: 50px; float: left; margin-top: 12px;
+	text-align: right; margin-right: 5px; margin-left: 15px;
+}
+
+.campos-login {
+	float: left; margin-top: 5px;
+}
+
+.esqueceu-senha {
+	font-size: 10px; margin-top: 5px;	
+}
+
+.error-msg {
+	height: 15px; padding: 10px;	
+}
+
+.curriculo-online {
+	padding: 10px;
+}
+
+.campo-login {
+    margin-top: 4px;
+}

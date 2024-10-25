@@ -1,0 +1,32 @@
+@import url(style.css); 
+
+Body {
+	margin: 0px;
+	background: #333333;
+}
+Form {
+	text-align: center;
+	padding: 10px;
+	background: #CEDEFF url(page_boxbg_top.jpg) center top no-repeat;
+}
+#tableTitle {
+	font-size: 11px;
+	text-align: center;
+	margin: 0px;
+	height: 38px;
+	border: 2px solid #FFFFFF;
+}
+#popFrame {
+	display: block;
+	border: 2px solid #FFFFFF;
+	border-top: none;
+}
+.botao {
+	background: url(page_botao_bg.jpg) center no-repeat;
+	color: #FFFFFF;
+	font-weight: bold;
+	border: none;
+	width: 70px;
+	height: 23px;
+	cursor: pointer;
+}

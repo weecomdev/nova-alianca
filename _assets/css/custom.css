@@ -1,0 +1,112 @@
+/*------------------------- Containers -----------------------*/
+.termsfeed-com---palette-light.termsfeed-com---nb {
+    box-shadow: 0px 3px 10px #000 29;
+}
+.termsfeed-com---palette-light.termsfeed-com---nb {
+    background-color: white;
+}
+/*-------------------------TEXTS -----------------------*/
+/*------------------------ BUTTONS -----------------------*/
+.termsfeed-com---palette-dark .cc-nb-okagree {
+    background: #b2a66f;
+    transition: 0.7s;
+    color: #fff;
+    margin-right: 1rem !important;
+}
+.termsfeed-com---palette-dark .cc-nb-okagree:hover {
+    background: #d2a771;
+}
+.termsfeed-com---palette-dark .cc-nb-reject {
+    color: #fff;
+    background: #b2a66f;
+    margin-right: 1rem !important;
+}
+.termsfeed-com---palette-dark .cc-nb-reject:hover {
+    background: #d2a771;
+}
+.termsfeed-com---nb-simple {
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    bottom: 2vh;
+    border: 0.2px solid #fff;
+    transition: 0.4s;
+}
+.termsfeed-com---palette-light .cc-nb-okagree {
+    background: #b2a66f !important;
+    margin-right: 1rem !important;
+    transition: 0.3s ease-in;
+    border-radius: 0px !important;
+    padding: 10px 20px !important;
+}
+.termsfeed-com---palette-light .cc-nb-okagree:hover {
+    background: #d2a771 !important;
+    transition: 0.3s ease-in;
+}
+.termsfeed-com---palette-light .cc-nb-reject {
+    background: #b2a66f !important;
+    margin-right: 1rem !important;
+    transition: 0.3s ease-in;
+    border-radius: 0px !important;
+    padding: 10px 20px !important;
+}
+.termsfeed-com---palette-light .cc-nb-reject:hover {
+    background: #d2a771 !important;
+    transition: 0.3s ease-in;
+}
+.termsfeed-com---palette-light .cc-nb-changep {
+    border-radius: 0px !important;
+    padding: 10px 20px !important;
+}
+
+.contact-info{
+    margin: 50px 0;
+    border: solid 1px grey;
+    border-radius: 20px;
+    padding: 30px 10px;
+}
+
+.contact-info h2{
+    border-bottom: solid 1px grey;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 30px;
+
+}
+
+.canais{
+    display: flex;
+    font-size: 18px;
+    gap: 30px;
+    justify-content: center;
+}
+
+.canais h3{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.new-form form{
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.new-form .title-fields{
+    width: 100%;
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    color: #b2a66f;
+}
+
+.new-form input,
+.new-form select,
+.new-form textarea{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px darkgrey;
+    max-width: 364px;
+}

@@ -1,0 +1,269 @@
+body {	
+	background: url(../images/corlaranja/background.jpg) repeat-x top;
+}
+
+.cabecalho {
+	background: url(../images/corlaranja/cabecalho.jpg) no-repeat top;
+	height: 51px;
+}
+
+.menu {
+	color: #EDDCAF;
+}
+
+.menupopup {
+    color: white;
+    background-color: #D2A937;
+}
+
+.menupopupbotao {
+    color: white;
+    margin-right: 5px;
+    border-radius: 2px;
+    background-color: #D2A937;
+    border: none;
+    border-radius: 2px;
+    height: 30px;
+    width: 90px;
+    cursor: pointer;
+}
+
+
+.curriculo-online {
+	background: url(../images/corlaranja/curriculo-online.jpg) no-repeat top;
+	height: 22px;
+}
+
+.titulo-login {
+	background: url(../images/corlaranja/titulos/login.jpg) no-repeat;
+}
+
+.titulo-cadastrar{
+	background: url(../images/corlaranja/titulos/novo-usuario.jpg) no-repeat;
+}
+
+.titulo-alterar-senha {
+	background: url(../images/corlaranja/titulos/alterar-senha.jpg) no-repeat;	
+}
+
+.titulo-Solicitar-Exclusao {
+    background: url(../images/corlaranja/titulos/SolicitarExclusao.jpg) no-repeat;
+}
+
+.titulo-vagas-disponiveis {
+	background: url(../images/corlaranja/titulos/vagas-disponiveis.jpg) no-repeat;	
+}
+
+.titulo-detalhes-vaga{
+	background: url(../images/corlaranja/titulos/detalhes-vaga.jpg) no-repeat;
+}
+
+.titulo-requisitos {
+	background: url(../images/corlaranja/titulos/requisitos.jpg) no-repeat;	
+}
+
+.titulo-dados-complementares {
+	background: url(../images/corlaranja/titulos/dados-complementares.jpg) no-repeat;	
+}
+
+.titulo-vagas-concorridas {
+	background: url(../images/corlaranja/titulos/vagas-concorridas.jpg) no-repeat;	
+}
+
+.titulo-cpf {
+	background: url(../images/corlaranja/titulos/cpf.jpg) no-repeat;	
+}
+
+.titulo-informacoes-pessoais {
+	background: url(../images/corlaranja/titulos/informacoes-pessoais.jpg) no-repeat;	
+}
+
+.titulo-dados-de-contato {
+	background: url(../images/corlaranja/titulos/dados-de-contato.jpg) no-repeat;	
+}
+
+.titulo-documentos {
+	background: url(../images/corlaranja/titulos/documentos.jpg) no-repeat;	
+}
+
+.titulo-informacoes-profissionais {
+	background: url(../images/corlaranja/titulos/informacoes-profissionais.jpg) no-repeat;	
+}
+
+.titulo-informacoes-academicas {
+	background: url(../images/corlaranja/titulos/informacoes-academicas.jpg) no-repeat;	
+}
+
+.titulo-historico-profissional {
+	background: url(../images/corlaranja/titulos/historico-profissional.jpg) no-repeat;	
+}
+
+.titulo-pesquisar-vagas {
+	background: url(../images/corlaranja/titulos/pesquisar-vagas.jpg) no-repeat;	
+}
+
+.titulo-interesses-profissionais {
+	background: url(../images/corlaranja/titulos/interesses-profissionais.jpg) no-repeat;	
+}
+
+.titulo-idiomas {
+	background: url(../images/corlaranja/titulos/idiomas.jpg) no-repeat;	
+}
+
+.titulo-palavras-chaves {
+	background: url(../images/corlaranja/titulos/palavras-chaves.jpg) no-repeat;	
+}
+
+.campo-login {
+	border: 1px solid #D2A937; padding: 3px; font-size: 13px;
+}
+
+.campo-login:focus {
+	border: 1px dashed #D2A937; background: #F9F3E3;
+}
+
+.bem-vindo {
+	background: url(../images/corlaranja/bem-vindo.jpg) no-repeat top left;
+}
+
+.campo {
+	border: 1px solid #D2A937; padding: 2px; font-size: 11px;
+}
+
+.campo:focus {
+	background: #F9F3E3;
+}
+
+.asterisco {
+	color: #D2A937; font-size: 12px; padding-left: 5px;
+}
+
+.botao-pagina-inicial {
+	width: 100px; height: 20px; cursor: pointer; border: none;
+	background: url(../images/corlaranja/botoes/pagina-inicial.jpg) no-repeat;
+}
+
+.botao-avancar {
+	 width: 80px; height: 20px; cursor: pointer; margin-top: 15px;
+	background: url(../images/corlaranja/botoes/avancar.jpg) no-repeat; border: none; margin-right: 10px;
+}
+
+.botao-voltar {
+	 width: 80px; height: 20px; float:right; cursor: pointer; margin-top: 15px;
+	background: url(../images/corlaranja/botoes/voltar.jpg) no-repeat; border: none; margin-right: 10px;
+}
+
+.botao-concluir {
+	 width: 80px; height: 20px; cursor: pointer; margin-top: 15px;
+	background: url(../images/corlaranja/botoes/concluir.jpg) no-repeat; border: none;
+}
+
+.botao-cancelar {
+	float: left; width: 80px; height: 20px; cursor: pointer; margin-top: 15px;
+	background: url(../images/corlaranja/botoes/cancelar.jpg) no-repeat; border: none;
+}
+
+.botao-filtrar {
+	float: right; width: 80px; height: 20px; cursor: pointer; margin-top: 15px;
+	background: url(../images/corlaranja/botoes/filtrar.jpg) no-repeat; border: none;
+}
+
+.botao-quero-me-candidatar {
+	width: 222px; height: 20px; cursor: pointer;
+	background: url(../images/corlaranja/botoes/quero-me-candidatar.jpg) no-repeat; border: none;
+}
+
+.botao-adicionar-curso {
+	width: 123px; height: 20px; cursor: pointer; margin-top: 15px; margin-bottom: 10px;
+	background: url(../images/corlaranja/botoes/adicionar-curso.jpg) no-repeat; border: none;
+}
+
+.botao-editar-curso {
+	width: 85px; height: 20px; cursor: pointer; margin-top: 15px; margin-bottom: 10px;
+	background: url(../images/corlaranja/botoes/salvar.jpg) no-repeat; border: none;
+}
+
+.botao-cancelar-curso {
+	width: 85px; height: 20px; cursor: pointer; margin-top: 15px; margin-bottom: 10px;
+	background: url(../images/corlaranja/botoes/cancelar.jpg) no-repeat; border: none;
+}
+
+.botao-adicionar-empresa {
+	width: 220px; height: 20px; cursor: pointer; margin-top: 10px; margin-bottom: 10px;
+	background: url(../images/corlaranja/botoes/adicionar-experiencia-profissional.jpg) no-repeat; border: none;
+}
+
+.botao-editar-empresa {
+	width: 85px; height: 20px; cursor: pointer; margin-top: 10px; margin-bottom: 10px;
+	background: url(../images/corlaranja/botoes/salvar.jpg) no-repeat; border: none;
+}
+
+.botao-cancelar-empresa {
+	width: 85px; height: 20px; cursor: pointer; margin-top: 10px; margin-bottom: 10px;
+	background: url(../images/corlaranja/botoes/cancelar.jpg) no-repeat; border: none;
+}
+
+.botao-fazer-nova-pesquisa {
+	float: right; width: 160px; height: 20px; cursor: pointer; margin-top: 15px; 
+	background: url(../images/corlaranja/botoes/fazer-nova-pesquisa.jpg) no-repeat; border: none;
+}
+
+.botao-excluir-candidato-desta-vaga {
+	float: right; width: 205px; height: 20px; cursor: pointer; margin-top: 15px; 
+	background: url(../images/corlaranja/botoes/excluir-candidato-desta-vaga.jpg) no-repeat; border: none; 
+}
+
+
+.vagas-disponiveis th{
+	background: #D2A937; color: white;
+}
+
+.vagas-disponiveis-dados-tabela td{
+	color: #D2A937;
+}
+
+.informacoes-academicas th{
+	background: #D2A937;
+}
+
+.informacoes-academicas td{
+	color: #D2A937;
+}
+
+.informacoes-academicas a {
+	color: #D2A937;
+}
+
+.borda-tabela {
+	border: 1px solid #D2A937;
+}
+
+.seta {
+	background: url(../images/corlaranja/seta.jpg) no-repeat;
+}
+
+.migalha-ativa {
+	color: #D2A937;
+}
+
+.migalha-align:hover {
+	color: #D2A937;
+	cursor: pointer;
+}
+
+.error-msg {
+	color: #D2A937;
+}
+
+fieldset legend {
+	color: #D2A937;
+}
+
+.botao-salvar {
+	float: right; width: 80px; height: 20px; cursor: pointer; margin-top: 15px;
+	background: url(../images/corlaranja/botoes/salvar.jpg) no-repeat; border: none;
+}
+
+.titulo-informacoes-adicionais{
+	background: url(../images/corlaranja/titulos/informacoes-adicionais.jpg) no-repeat;
+}

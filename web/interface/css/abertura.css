@@ -1,0 +1,125 @@
+
+/* ANIMAÇÃO DE ABERTURA */
+
+/* ============================================================================================================================= */
+/* Tags Gerais */
+
+* { margin: 0; padding: 0; }
+
+Body {
+	font-family: "Trebuchet MS", Georgia, "Times New Roman", Times, serif;
+	font-size: 13px;
+	color: #8D8573;
+	background: #FFF;
+}
+
+/* ============================================================================================================================= */
+/* Painel geral */
+
+#painel {
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	width: 100%;
+	height: 520px;
+	margin-top: -256px;
+}
+
+/* Link para site */
+#painel #pular {
+	position: absolute;
+	right: 390px;
+	bottom: 0px;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	color: #FFF;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+/* ============================================================================================================================= */
+/* Mewnsagem */
+
+#painel #mensagem {
+	position: relative;
+	height: 520px;
+	margin-right: 350px;
+	background: #2b1515;
+}
+
+/* Logo */
+#painel #mensagem A#logo {
+	position: absolute;
+	top: 150px;
+	right: 40px;
+	width: 235px;
+	height: 61px;
+	text-indent:-1000px;
+	overflow: hidden;
+	background: url(../imagens/topo_logo.png) center no-repeat;
+}
+
+/* Frase */
+#painel #mensagem P {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	width: 500px;
+	height: 100px;
+	margin: 40px;
+	text-align: right;
+	line-height: 23px;
+}
+
+/* ============================================================================================================================= */
+/* Imagem */
+
+#painel #imagem {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 350px;
+	height: 520px;
+}
+
+/* ============================================================================================================================= */
+/* Rodapé */
+
+#rodape {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	display: block;
+	clear: both;
+	width: 100%;
+	height: 30px;
+}
+
+/* Copyright */
+#rodape Small {
+	float: left;
+	height: 14px;
+	line-height: 30px;
+	margin-left: 10px;
+}
+
+/* Logo CDI */
+#rodape A#cdi {
+	float: right;
+	display: block;
+	width: 23px;
+	height: 30px;
+	background: url(../imagens/rodape_cdi.png) center no-repeat;
+	text-indent: -1000px;
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+/* ============================================================================================================================= */
+/* Hack IE6 */
+
+* Html #painel #mensagem A#logo {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop, src='interface/imagens/topo_logo.png');
+}

@@ -1,0 +1,91 @@
+
+function wb_form_validateForm(formId, values, errors) {
+	var form = $("input[name='wb_form_id'][value='" + formId + "']").parent();
+	if (!form || form.length === 0 || !errors) return;
+	
+	form.find("input[name],textarea[name]").css({backgroundColor: ""});
+	
+	if (errors.required) {
+		for (var i = 0; i < errors.required.length; i++) {
+			var name = errors.required[i];
+			var elem = form.find("input[name='" + name + "'],textarea[name='" + name + "'],select[name='" + name + "']");
+			elem.css({backgroundColor: "#ff8c8c"});
+		}
+	}
+	
+	if (Object.keys(errors).length) {
+		for (var k in values) {
+			var elem = form.find("input[name='" + k + "'],textarea[name='" + k + "'],select[name='" + k + "']");
+			elem.val(values[k]);
+		}
+	}
+}
+
+function isTouchDevice() {
+	return ('ontouchstart' in document.documentElement) && (
+		navigator.userAgent.match(/Android/i)
+		|| navigator.userAgent.match(/webOS/i)
+		|| navigator.userAgent.match(/BlackBerry/i)
+		|| navigator.userAgent.match(/Windows Phone/i)
+		|| navigator.userAgent.match(/Opera Mini/i)
+		|| navigator.userAgent.match(/IEMobile/i)
+		|| navigator.userAgent.match(/iPhone/i)
+		|| navigator.userAgent.match(/iPad/i)
+		|| navigator.userAgent.match(/iPod/i)
+		|| navigator.userAgent.match(/Mac/) && navigator.maxTouchPoints > 0
+	);
+}
+function isIOS() {
+	return ('ontouchstart' in document.documentElement) && (
+		navigator.userAgent.match(/iPhone/i)
+		|| navigator.userAgent.match(/iPad/i)
+		|| navigator.userAgent.match(/iPod/i)
+		|| navigator.userAgent.match(/Mac/) && navigator.maxTouchPoints > 0
+	);
+}
+
+function wb_show_alert(message, type) {
+	var prompt = $("<div>")
+		.addClass("alert alert-wb-form alert-" + type)
+		.append(message)
+		.prepend($("<button>").addClass("close")
+			.html("&nbsp;&times;")
+			.on("click", function() { $(this).parent().remove(); })
+		)
+	.appendTo("body");
+	setTimeout(function() { prompt.animate({ opacity: 1, right: 0 }, 250); }, 250);
+}
+
+(function() {
+	var popupInited = false;
+
+	var loader, container, popup,
+		iframe, closeBtn, isVisible;
+
+	var setPopupVisible = function(visible) {
+		isVisible = !!visible;
+		if (isVisible) {
+			container.show();
+			setTimeout(function() { container.addClass('visible'); }, 10);
+		} else {
+			container.removeClass('visible');
+			setTimeout(function() { container.hide(); }, 300);
+		}
+	};
+	
+	window.wb_close_popup = function() {
+		if (iframe && iframe.length) {
+			iframe.attr('src', '');
+			setPopupVisible(false);
+		}
+	};
+
+	window.wb_show_popup = function(url, width, height) {
+		if (!popupInited) {
+			popupInited = true;
+			container = $('<div class="wb-popup-container">');
+			popup = $('<div class="wb-popup">');
+			loader = $('<div class="wb-popup-loader">').hide();
+			$('<div class="ico-spin spinner">').appendTo(loader);
+			iframe = $('<iframe>');
+			closeBtn = $('<div class="wb-popup-btn-close">

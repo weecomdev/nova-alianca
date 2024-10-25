@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Inicio>
+<Registro>
+<Data>2011-07-22 16:45:00</Data>
+<Observacoes>Criação da tabela de Versão do Currículo Web</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhversaocvweb` (
+  `VersaoSistema` varchar(12) NOT NULL,
+  `DataVersao` date DEFAULT NULL,
+  `UltimoScript` datetime DEFAULT NULL,  
+  PRIMARY KEY (`VersaoSistema`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Versão do Currículo Web';</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:00:00</Data>
+<Observacoes>Inclusão de novos campos para CandidatosWebConf e Requisições.</Observacoes>
+<Script>ALTER TABLE rhcandidatoswebconf ADD OrdemPlvChave CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:00:05</Data>
+<Observacoes>Inclusão de novos campos para CandidatosWebConf e Requisições.</Observacoes>
+<Script>ALTER TABLE rhcandidatoswebconf ADD OrdemInteresses CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:00:10</Data>
+<Observacoes>Inclusão de novos campos para CandidatosWebConf e Requisições.</Observacoes>
+<Script>ALTER TABLE rhrequisicoes ADD AbrirInscricao CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:00:15</Data>
+<Observacoes>Inclusão de novos campos para CandidatosWebConf e Requisições.</Observacoes>
+<Script>ALTER TABLE rhrequisicoes ADD DivulgarVagaExt CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:00:20</Data>
+<Observacoes>Inclusão de novos campos para CandidatosWebConf e Requisições.</Observacoes>
+<Script>ALTER TABLE rhrequisicoes ADD InicioSelecao DATE;</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:00:25</Data>
+<Observacoes>Inclusão de novos campos para CandidatosWebConf e Requisições.</Observacoes>
+<Script>ALTER TABLE rhrequisicoes ADD PrazoEncerramento DATE;</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:00:30</Data>
+<Observacoes>Inclusão de novos campos para CandidatosWebConf e Requisições.</Observacoes>
+<Script>ALTER TABLE rhrequisicoes ADD Dt_Encerra DATE;</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:00:35</Data>
+<Observacoes>Inclusão de novos campos para CandidatosWebConf e Requisições.</Observacoes>
+<Script>UPDATE rhrequisicoes SET AbrirInscricao = 'S', DivulgarVagaExt = 'S'
+WHERE AbrirInscricao Is Null And DivulgarVagaExt Is Null;</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:05:00</Data>
+<Observacoes>Criação da tabela de Campos Obrigatórios.</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhcamposwebobr` (
+  `Empresa` varchar(4) NOT NULL,
+  `IdCampoObr` int(3) NOT NULL,
+  PRIMARY KEY (`Empresa`, `IdCampoObr`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Campos Obrigatorios';</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:10:00</Data>
+<Observacoes>Criação da tabela do Dicionário de campos obrigatórios.</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhdicionariocampoobr` (
+  `IdCampoObr` int(3) NOT NULL,
+  `Tabela` varchar(30) DEFAULT NULL,
+  `CampoTabela` varchar(30) DEFAULT NULL,
+  `Descricao60` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`IdCampoObr`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Dicionario de Campos Obrigatorios';</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:15:00</Data>
+<Observacoes>Inclusão dos campos obrigatórios na tabela.</Observacoes>
+<Script>INSERT INTO `rhdicionariocampoobr` (`IdCampoObr`, `Tabela`, `CampoTabela`, `Descricao60`) VALUES
+(1, 'RHPESSOAS', 'PAI', 'Pai'),
+(2, 'RHPESSOAS', 'MAE', 'Mãe'),
+(3, 'RHPESSOAS', 'LOCALNASCIMENTO', 'Cidade do Nascimento'),
+(4, 'RHPESSOAS', 'UFNASCIMENTO', 'UF do Nascimento'),
+(5, 'RHPESSOAS', 'ESTADOCIVIL', 'Estado Civil'),
+(6, 'RHPESSOAS', 'GRAUINSTRUCAO', 'Grau de Instrução'),
+(7, 'RHPESSOAS', 'PRETENSAOSALARIAL', 'Pretensão Salarial'),
+(8, 'RHPESSOAS', 'NACIONALIDADE', 'Nacionalidade'),
+(9, 'RHPESSOAS', 'VALIDADEVISTO', 'Validade do Visto'),
+(10, 'RHPESSOAS', 'ANOCHEGADABRASIL', 'Ano Chegada Brasil'),
+(11, 'RHPESSOAS', 'TIPOVISTO', 'Visto'),
+(12, 'RHPESSOAS', 'IDENTIDADE', 'Identidade'),
+(13, 'RHPESSOAS', 'TIPOIDENTIDADE', 'Tipo da Identidade'),
+(14, 'RHPESSOAS', 'CONSELHOCLASSE', 'Conselho de Classe'),
+(15, 'RHPESSOAS', 'REGISTROCONSELHO', 'Registro no Conselho'),
+(16, 'RHPESSOAS', 'DATAREGISTRO', 'Data do Registro'),
+(17, 'RHPESSOAS', 'RUA', 'Logradouro'),
+(18, 'RHPESSOAS', 'NRORUA', 'Número'),
+(19, 'RHPESSOAS', 'COMPLEMENTO', 'Complemento'),
+(20, 'RHPESSOAS', 'BAIRRO', 'Bairro'),
+(21, 'RHPESSOAS', 'CIDADE', 'Cidade'),
+(22, 'RHPESSOAS', 'UF', 'UF'),
+(23, 'RHPESSOAS', 'DDD', 'DDD Residencial'),
+(24, 'RHPESSOAS', 'TELEFONE', 'Telefone Residencial'),
+(25, 'RHPESSOAS', 'DDDCELULAR', 'DDD Celular'),
+(26, 'RHPESSOAS', 'TELEFONECELULAR', 'Telefone Celular'),
+(27, 'RHPESSOAS', 'EMAIL', 'E-Mail'),
+(28, 'RHEMPRESASANTERIORES', 'SALARIOFINAL', 'Último Salário'),
+(29, 'RHEMPRESASANTERIORES', 'OBSERVACOES', 'Atividades/Projetos/Obs.'),
+(30, 'RHPESSOACURSOSRS', 'DESCRICAO40', 'Entidade'),
+(31, 'RHPESSOACURSOSRS', 'CAR_HORARIA', 'Carga Horária'),
+(32, 'RHPESSOACURSOSRS', 'DT_INICIO', 'Início'),
+(33, 'RHPESSOACURSOSRS', 'DT_ENCERRA', 'Encerramento');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:20:00</Data>
+<Observacoes>Criação da tabela de requisitos obrigatórios.</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhrequisitoswebobr` (
+  `Empresa` varchar(4) NOT NULL,
+  `Requisito` varchar(4) NOT NULL,
+  PRIMARY KEY (`Empresa`, `Requisito`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Requisitos Obrigatorios';</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:25:00</Data>
+<Observacoes>Criação da tabela para o registro das variáveis obrigatórias.</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhvariaveiswebobr` (
+  `Empresa` varchar(4) NOT NULL,
+  `Variavel` varchar(4) NOT NULL,
+  PRIMARY KEY (`Empresa`, `Variavel`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Dados Complementares Obrigatorios';</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:30:00</Data>
+<Observacoes>Criação da tabela de Tipos de Cursos.</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhtiposcurso` (
+  `TipoCurso` varchar(2) NOT NULL,
+  `Descricao40` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`TipoCurso`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tipos de Curso';</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:35:00</Data>
+<Observacoes>Script para corrigir o problema de código de empresa inconsistênte em algumas tabelas de pessoas.</Observacoes>
+<Script>Update rhpessoas set rhpessoas.Empresa = (select rhempresas.Empresa from rhempresas)
+where not exists (select rhempresas.Empresa from rhempresas where rhempresas.Empresa = rhpessoas.Empresa);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:35:05</Data>
+<Observacoes>Script para corrigir o problema de código de empresa inconsistênte em algumas tabelas de pessoas.</Observacoes>
+<Script>Update rhrequisicoesturma set rhrequisicoesturma.Empresa = (select rhempresas.Empresa from rhempresas)
+where not exists (select rhempresas.Empresa from rhempresas where rhempresas.Empresa = rhrequisicoesturma.Empresa);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:35:10</Data>
+<Observacoes>Script para corrigir o problema de código de empresa inconsistênte em algumas tabelas de pessoas.</Observacoes>
+<Script>Update rhpessoasdadoscompl set rhpessoasdadoscompl.Empresa = (select rhempresas.Empresa from rhempresas)
+where not exists (select rhempresas.Empresa from rhempresas where rhempresas.Empresa = rhpessoasdadoscompl.Empresa);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:35:15</Data>
+<Observacoes>Script para corrigir o problema de código de empresa inconsistênte em algumas tabelas de pessoas.</Observacoes>
+<Script>Update `rhpessoarequisitos` set Empresa = (select rhempresas.Empresa from rhempresas)
+where not exists (select rhempresas.Empresa from rhempresas where rhempresas.Empresa = rhpessoarequisitos.Empresa);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:35:20</Data>
+<Observacoes>Script para corrigir o problema de código de empresa inconsistênte em algumas tabelas de pessoas.</Observacoes>
+<Script>Update rhpessoapalavrachave set rhpessoapalavrachave.Empresa = (select rhempresas.Empresa from rhempresas)
+where not exists (select rhempresas.Empresa from rhempresas where rhempresas.Empresa = rhpessoapalavrachave.Empresa);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:35:25</Data>
+<Observacoes>Script para corrigir o problema de código de empresa inconsistênte em algumas tabelas de pessoas.</Observacoes>
+<Script>Update rhpessoaidiomas set rhpessoaidiomas.Empresa = (select rhempresas.Empresa from rhempresas)
+where not exists (select rhempresas.Empresa from rhempresas where rhempresas.Empresa = rhpessoaidiomas.Empresa);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:35:30</Data>
+<Observacoes>Script para corrigir o problema de código de empresa inconsistênte em algumas tabelas de pessoas.</Observacoes>
+<Script>Update rhempresasanteriores set rhempresasanteriores.Empresa = (select rhempresas.Empresa from rhempresas)
+where not exists (select rhempresas.Empresa from rhempresas where rhempresas.Empresa = rhempresasanteriores.Empresa);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:35:35</Data>
+<Observacoes>Script para corrigir o problema de código de empresa inconsistênte em algumas tabelas de pessoas.</Observacoes>
+<Script>Update rhpessoaempantexp set rhpessoaempantexp.Empresa = (select rhempresas.Empresa from rhempresas)
+where not exists (select rhempresas.Empresa from rhempresas where rhempresas.Empresa = rhpessoaempantexp.Empresa);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:35:40</Data>
+<Observacoes>Script para corrigir o problema de código de empresa inconsistênte em algumas tabelas de pessoas.</Observacoes>
+<Script>Update rhpessoacursosrs set rhpessoacursosrs.Empresa = (select rhempresas.Empresa from rhempresas)
+where not exists (select rhempresas.Empresa from rhempresas where rhempresas.Empresa = rhpessoacursosrs.Empresa);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:35:45</Data>
+<Observacoes>Script para corrigir o problema de código de empresa inconsistênte em algumas tabelas de pessoas.</Observacoes>
+<Script>Update rhpessoaareasinteres set rhpessoaareasinteres.Empresa = (select rhempresas.Empresa from rhempresas)
+where not exists (select rhempresas.Empresa from rhempresas where rhempresas.Empresa = rhpessoaareasinteres.Empresa);</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:40:00</Data>
+<Observacoes>Criação da tabela de definição das diretrizes do CVWeb.</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhdiretrizescvwebdef` (
+  `DiretrizWeb` varchar(40) NOT NULL,
+  `Descricao80` varchar(80) DEFAULT NULL,
+  `TipoDiretrizWeb` char(1) DEFAULT NULL,  
+  PRIMARY KEY (`DiretrizWeb`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Diretrizes do Currículo Web';</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:45:00</Data>
+<Observacoes>Criação da tabela das opções das diretrizes do CVWeb.</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhdiretrizescvwebopc` (
+  `DiretrizWeb` varchar(40) NOT NULL,
+  `NroOrdem` int(2) NOT NULL,
+  `Descricao40` varchar(40) DEFAULT NULL,  
+  PRIMARY KEY (`DiretrizWeb`, `NroOrdem`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Opções das Diretrizes do Currículo Web';</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 08:50:00</Data>
+<Observacoes>Criação da tabela para o registro das respostas para as diretrizes do CVWeb.</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhcandidatoswebdir` (
+  `Empresa` varchar(4) NOT NULL,
+  `DiretrizWeb` varchar(40) NOT NULL,
+  `ConteudoData` datetime DEFAULT NULL,  
+  `ConteudoMemo` text DEFAULT NULL,  
+  `ConteudoNumero` int(9) DEFAULT NULL,  
+  `ConteudoOpcao` int(2) DEFAULT NULL,  
+  PRIMARY KEY (`Empresa`, `DiretrizWeb`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Resultado das Diretrizes do Currículo Web';</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:00</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('mensagemBemVindo', 'Mensagem de boas vindas:', 'T');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:05</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('mensagemMeuCurriculo', 'Mensagem de preenchimento do Currículo:', 'T');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:10</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('mensagemConcluido', 'Mensagem da Página de Conclusão de preenchimento:', 'T');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:15</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('indicadorEmailConcluido', 'Enviar e-mail de conclusão?', 'O');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:20</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('indicadorEmailConcluido', 1, 'Sim');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:25</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('indicadorEmailConcluido', 2, 'Não');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:30</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('mensagemEmailConcluido', 'Mensagem do e-mail de Conclusão', 'T');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:35</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('cor', 'Tema do Currículo Web:', 'O');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:40</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('cor', 1, 'Laranja');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:45</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('cor', 2, 'Verde');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:50</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('cor', 3, 'Azul');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:00:55</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('cor', 4, 'Vermelho');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:01:00</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('cor', 5, 'Preto');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:01:05</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('primeiroEmpregoObrigatorio', 'Obrigar o preenchimento do primeiro emprego?', 'O');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:01:10</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('primeiroEmpregoObrigatorio', 1, 'Sim');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:01:15</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('primeiroEmpregoObrigatorio', 2, 'Não');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:01:20</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('mensagemPrimeiroEmpregoObrigatorio', 'Mensagem de Erro de primeiro emprego obrigatório:', 'T');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:01:25</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('home', 'URL da Página principal do site do cliente:', 'T');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:01:30</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('mensagemCurriculoIncompletoCapa', 'Mensagem de Currículo Incompleto da Página Inicial:', 'T');</Script>
+</Registro>
+<Registro>
+<Data>2011-07-25 09:01:35</Data>
+<Observacoes>Script para a inserção das diretrizes nas tabelas de definição e opções.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('mensagemCurriculoIncompletoConcluido', 'Mensagem de Currículo Incompleto da página de Conclusão:', 'T');</Script>
+</Registro>
+<Registro>
+<Data>2011-09-01 11:00:00</Data>
+<Observacoes>Tabela de Fotos das Pessoas</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhpessoasfotos` (
+  `Empresa` varchar(4) NOT NULL,
+  `Pessoa` int(8) NOT NULL,
+  `Foto` blob,
+  PRIMARY KEY (`Empresa`, `Pessoa`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Fotos das Pessoas';</Script>
+</Registro>
+<Registro>
+<Data>2011-10-17 16:00:00</Data>
+<Observacoes>Incluída coluna para definição do local para gravas as fotos dos candidatos</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('localPessoaFoto', 'Local da Foto da Pessoa:', 'O');</Script>
+</Registro>
+<Registro>
+<Data>2011-10-17 16:01:00</Data>
+<Observacoes>Incluída coluna para definição do local para gravas as fotos dos candidatos</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('localPessoaFoto', 1, 'No Banco de Dados');</Script>
+</Registro>
+<Registro>
+<Data>2011-10-17 16:02:00</Data>
+<Observacoes>Incluída coluna para definição do local para gravas as fotos dos candidatos</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('localPessoaFoto', 2, 'Arquivos Externos');</Script>
+</Registro>
+<Registro>
+<Data>2011-10-17 16:03:00</Data>
+<Observacoes>Incluída coluna para definição do local para gravas as fotos dos candidatos</Observacoes>
+<Script>Insert Into rhcandidatoswebdir (Empresa, DiretrizWeb, ConteudoOpcao) 
+Select distinct(empresa),  'localPessoaFoto', '1' from rhcandidatoswebdir;</Script>
+</Registro>
+<Registro>
+<Data>2011-10-17 16:04:00</Data>
+<Observacoes>Altera campo chave da tabela de requisicoes para varchar de 8
+
+corrigir para todos os clientes</Observacoes>
+<Script>alter table rhrequisicoes modify Requisicao varchar(8);</Script>
+</Registro>
+<Registro>
+<Data>2011-10-17 16:05:00</Data>
+<Observacoes>Altera tipo de dados de foto da tabela de fotos das pessoas</Observacoes>
+<Script>alter table rhpessoasfotos modify foto mediumblob;</Script>
+</Registro>
+<Registro>
+<Data>2011-12-23 08:28:00</Data>
+<Observacoes>Script para a alteração do tamanho do campo SenhaSTMP.</Observacoes>
+<Script>ALTER TABLE `rhcandidatoswebconf` CHANGE `SenhaSMTP` `SenhaSMTP` VARCHAR( 200 ) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL</Script>
+</Registro>
+<Registro>
+<Data>2012-01-02 10:21:00</Data>
+<Observacoes>Inclusão da configuração do campo "De" para um email enviado.</Observacoes>
+<Script>ALTER TABLE rhcandidatoswebconf ADD EmailDe VARCHAR(40);</Script>
+</Registro>
+<Registro>
+<Data>2012-01-02 10:21:01</Data>
+<Observacoes>Configuração do tipo de email que será usado no Curriculo Web.</Observacoes>
+<Script>ALTER TABLE rhcandidatoswebconf ADD ConfigurarEmailPor VARCHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2012-01-02 10:21:02</Data>
+<Observacoes>Script para atualizar o campo ConfigurarEmailPor com o valor que já é utilizado pelos clientes.</Observacoes>
+<Script>Update rhcandidatoswebconf set ConfigurarEmailPor = '1';</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:01:00</Data>
+<Observacoes>Incremento da Versão do CVWeb.</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.1', DataVersao = '2012-02-03';</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:00</Data>
+<Observacoes>Criação do índice na tabela de usuários.</Observacoes>
+<Script>ALTER TABLE `bf2usuarios` ADD INDEX `idx_pessoa_bf2usuarios` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:05</Data>
+<Observacoes>Criação do índice na tabela de empresas anteriores.</Observacoes>
+<Script>ALTER TABLE `rhempresasanteriores` ADD INDEX `idx_pessoa_empresasanteriores` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:10</Data>
+<Observacoes>Criação do índice na tabela de áreas de interesse.</Observacoes>
+<Script>ALTER TABLE `rhpessoaareasinteres` ADD INDEX `idx_pessoa_areasinteres` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:15</Data>
+<Observacoes>Criação do índice na tabela de cargos pretendidos.</Observacoes>
+<Script>ALTER TABLE `rhpessoacargpretend` ADD INDEX `idx_pessoa_cargpretend` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:20</Data>
+<Observacoes>Criação do índice na tabela de cursos das pessoas.</Observacoes>
+<Script>ALTER TABLE `rhpessoacursosrs` ADD INDEX `idx_pessoa_cursosrs` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:25</Data>
+<Observacoes>Criação do índice na tabela de empresas anteriores.</Observacoes>
+<Script>ALTER TABLE `rhpessoaempantexp` ADD INDEX `idx_pessoa_empantexp` ( `Pessoa` );</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:30</Data>
+<Observacoes>Criação do índice na tabela de funções pretendidas.</Observacoes>
+<Script>ALTER TABLE `rhpessoafuncpretend` ADD INDEX `idx_pessoa_funcpretend` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:35</Data>
+<Observacoes>Criação do índice na tabela de idiomas das pessoas.</Observacoes>
+<Script>ALTER TABLE `rhpessoaidiomas` ADD INDEX `idx_pessoa_idiomas` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:40</Data>
+<Observacoes>Criação do índice na tabela de palavras chaves.</Observacoes>
+<Script>ALTER TABLE `rhpessoapalavrachave` ADD INDEX `idx_pessoa_palavrachave` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:45</Data>
+<Observacoes>Criação do índice na tabela de requisitos das pessoas.</Observacoes>
+<Script>ALTER TABLE `rhpessoarequisitos` ADD INDEX `idx_pessoa_requisitos` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:50</Data>
+<Observacoes>Criação do índice na tabela de pessoas.</Observacoes>
+<Script>ALTER TABLE `rhpessoas` ADD INDEX `idx_pessoa` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:02:55</Data>
+<Observacoes>Criação do índice na tabela de dados complementares das pessoas.</Observacoes>
+<Script>ALTER TABLE `rhpessoasdadoscompl` ADD INDEX `idx_pessoa_dadoscompl` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:03:00</Data>
+<Observacoes>Criação do índice na tabela de fotos das pessoas.</Observacoes>
+<Script>ALTER TABLE `rhpessoasfotos` ADD INDEX `idx_pessoa_fotos` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-02-03 18:03:05</Data>
+<Observacoes>Criação do índice na tabela de inscritos nas requisições.</Observacoes>
+<Script>ALTER TABLE `rhrequisicoesturma` ADD INDEX `idx_pessoa_requisicoesturma` ( `Pessoa` ) ;</Script>
+</Registro>
+<Registro>
+<Data>2012-04-24 16:27:00</Data>
+<Observacoes>Mudança no tamanho do campo das requisições para 8.</Observacoes>
+<Script>alter table rhrequisicoesturma modify Requisicao varchar(8)</Script>
+</Registro>
+<Registro>
+<Data>2012-07-20 10:24:00</Data>
+<Observacoes>Incremento da revisão do Currículo Web para a versão 1.2</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.2', DataVersao = '2012-07-20';</Script>
+</Registro>
+<Registro>
+<Data>2012-12-05 16:24:00</Data>
+<Observacoes>Insere a diretriz de opção se o candidato pode se candidatar a uma vaga se ele ainda não preencheu todos os campos obrigatórios.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb)
+Values ('ObrigarPreenchimentoCamposObrParaVagas', 'Obrigar o preenchimento dos campos obrigatório para se candidatar a uma vaga?', 'O');</Script>
+</Registro>
+<Registro>
+<Data>2012-12-05 16:24:05</Data>
+<Observacoes>Insere a diretriz de opção se o candidato pode se candidatar a uma vaga se ele ainda não preencheu todos os campos obrigatórios.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('ObrigarPreenchimentoCamposObrParaVagas', 1, 'Não');</Script>
+</Registro>
+<Registro>
+<Data>2012-12-05 16:24:10</Data>
+<Observacoes>Insere a diretriz de opção se o candidato pode se candidatar a uma vaga se ele ainda não preencheu todos os campos obrigatórios.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebopc(DiretrizWeb, NroOrdem, Descricao40)
+Values ('ObrigarPreenchimentoCamposObrParaVagas', 2, 'Sim');</Script>
+</Registro>
+<Registro>
+<Data>2012-12-05 16:24:15</Data>
+<Observacoes>Insere a diretriz de opção se o candidato pode se candidatar a uma vaga se ele ainda não preencheu todos os campos obrigatórios.</Observacoes>
+<Script>Insert Into rhcandidatoswebdir (Empresa, DiretrizWeb, ConteudoOpcao) 
+Select distinct(empresa),  'ObrigarPreenchimentoCamposObrParaVagas', '1' from rhcandidatoswebdir;</Script>
+</Registro>
+<Registro>
+<Data>2012-12-05 16:24:18</Data>
+<Observacoes>Criação do campo de Registro da Habilitação.</Observacoes>
+<Script>ALTER TABLE rhpessoas ADD RegistroHabilitacao VARCHAR(15);</Script>
+</Registro>
+<Registro>
+<Data>2012-12-05 16:24:20</Data>
+<Observacoes>Cria da data de validade da carteira nacional de habilitação.</Observacoes>
+<Script>ALTER TABLE rhpessoas ADD ValidadeHabilitacao DATE;</Script>
+</Registro>
+<Registro>
+<Data>2012-12-05 16:24:22</Data>
+<Observacoes>Cria o campo da categoria da carteira nacional de habilitação.</Observacoes>
+<Script>ALTER TABLE rhpessoas ADD CategoriaHabilitacao VARCHAR(3);</Script>
+</Registro>
+<Registro>
+<Data>2013-06-12 17:14:00</Data>
+<Observacoes>Incremento da versão do currículo web 1.2 para 1.3.</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.3', DataVersao = '2013-06-14';</Script>
+</Registro>
+<Registro>
+<Data>2013-11-29 10:10:01</Data>
+<Observacoes>Tabela de Log de Diagnósticos</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS rhdiagnosticos (
+  `Id` int(3) NOT NULL,
+  `Log` varchar(4000) DEFAULT NULL,
+  `Tipo` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabela de Log de Diagnósticos';</Script>
+</Registro>
+<Registro>
+<Data>2013-12-13 18:00:00</Data>
+<Observacoes>Atualização da versão do Currículo Web para a versão 1.4.</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.4', DataVersao = '2013-12-13';</Script>
+</Registro>
+<Registro>
+<Data>2014-08-26 18:00:01</Data>
+<Observacoes>Atualização da versão do Currículo Web para a versão 1.5.</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.5', DataVersao = '2014-09-05';</Script>
+</Registro>
+<Registro>
+<Data>2014-08-26 18:00:02</Data>
+<Observacoes>Inclusa coluna na tabela rhareasatuacao de descrição de 60 caracteres.</Observacoes>
+<Script>ALTER TABLE rhareasatuacao ADD COLUMN Descricao60 VARCHAR(60) NULL DEFAULT NULL AFTER Descricao20;</Script>
+</Registro>
+<Registro>
+<Data>2014-08-26 18:00:03</Data>
+<Observacoes>atualizado o campo descrição 60 com o valor da descrição de 20 caracteres para o currículoweb.</Observacoes>
+<Script>UPDATE rhareasatuacao SET Descricao60 = Descricao20;</Script>
+</Registro>
+<Registro>
+<Data>2014-08-26 18:00:04</Data>
+<Observacoes>alterada a versão mínima do sistema exigida</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.6', DataVersao = '2015-04-02';</Script>
+</Registro>
+<Registro>
+<Data>2015-04-24 16:26:01</Data>
+<Observacoes>alterada a versão mínima exigida pelo sistema</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.7', DataVersao = '2015-07-24';</Script>
+</Registro>
+<Registro>
+<Data>2015-04-24 16:26:02</Data>
+<Observacoes>tabela de regiões</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhregioes` ( `Regiao` varchar(4) NOT NULL,
+ `Descricao60` varchar(60) NULL,
+ `AtivaDesativada` CHAR(1) NULL,
+ PRIMARY KEY (`Regiao`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Regiões';</Script>
+</Registro>
+<Registro>
+<Data>2015-04-24 16:26:03</Data>
+<Observacoes>inclusão da coluna de região na vaga</Observacoes>
+<Script>ALTER TABLE rhrequisicoes ADD COLUMN Regiao VARCHAR(4) NULL DEFAULT NULL;</Script>
+</Registro>
+<Registro>
+<Data>2016-09-09 14:24:01</Data>
+<Observacoes>Criado o campo da descrição oficial do município</Observacoes>
+<Script>ALTER TABLE rhmunicipios ADD COLUMN Descricao80 VARCHAR(80) NULL DEFAULT NULL;</Script>
+</Registro>
+<Registro>
+<Data>2016-09-16 09:42:01</Data>
+<Observacoes>atualizado campo do local de nascimento da pessoa</Observacoes>
+<Script>update rhpessoas set rhpessoas.LocalNascimento = 
+(select rhmunicipios.cidade from rhmunicipios where rhmunicipios.UF = rhpessoas.UFNascimento and UPPER (REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(  
+REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+REPLACE(REPLACE(REPLACE(UPPER(rhpessoas.LocalNascimento), 'Ý', 'Y'), 'Ñ', 'N'), 'Ö', 'O'), 'Ï', 'I'), 'Ü', 'U'), 'Ë', 'E'), 'Õ', 'O'), 'Ã', 'A'), 'Û', 'U'), 'Ô', 'O'), 
+'Î', 'I'), 'Ê', 'E'), 'Â', 'A'), 'Ù', 'U'), 'Ò', 'O'), 'Ì', 'I'), 'È', 'E'), 'À', 'A'), 'Ú', 'U'), 'Ó', 'O'), 'Í', 'I'), 'É', 'E'), 'Ç', 
+'C'), 'Á', 'A'), 'Ÿ', 'Y'), 'Ž', 'Z'), 'Š', 'S')) = UPPER (REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(  
+REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+REPLACE(REPLACE(REPLACE(UPPER(rhmunicipios.cidade), 'Ý', 'Y'), 'Ñ', 'N'), 'Ö', 'O'), 'Ï', 'I'), 'Ü', 'U'), 'Ë', 'E'), 'Õ', 'O'), 'Ã', 'A'), 'Û', 'U'), 'Ô', 'O'), 
+'Î', 'I'), 'Ê', 'E'), 'Â', 'A'), 'Ù', 'U'), 'Ò', 'O'), 'Ì', 'I'), 'È', 'E'), 'À', 'A'), 'Ú', 'U'), 'Ó', 'O'), 'Í', 'I'), 'É', 'E'), 'Ç', 
+'C'), 'Á', 'A'), 'Ÿ', 'Y'), 'Ž', 'Z'), 'Š', 'S')) limit 1)
+where rhpessoas.LocalNascimento is not null and 
+exists ( select rhmunicipios.cidade from rhmunicipios where rhmunicipios.UF = rhpessoas.UFNascimento and UPPER (REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(  
+REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+REPLACE(REPLACE(REPLACE(UPPER(rhpessoas.LocalNascimento), 'Ý', 'Y'), 'Ñ', 'N'), 'Ö', 'O'), 'Ï', 'I'), 'Ü', 'U'), 'Ë', 'E'), 'Õ', 'O'), 'Ã', 'A'), 'Û', 'U'), 'Ô', 'O'), 
+'Î', 'I'), 'Ê', 'E'), 'Â', 'A'), 'Ù', 'U'), 'Ò', 'O'), 'Ì', 'I'), 'È', 'E'), 'À', 'A'), 'Ú', 'U'), 'Ó', 'O'), 'Í', 'I'), 'É', 'E'), 'Ç', 
+'C'), 'Á', 'A'), 'Ÿ', 'Y'), 'Ž', 'Z'), 'Š', 'S')) = UPPER (REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(  
+REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+REPLACE(REPLACE(REPLACE(UPPER(rhmunicipios.cidade), 'Ý', 'Y'), 'Ñ', 'N'), 'Ö', 'O'), 'Ï', 'I'), 'Ü', 'U'), 'Ë', 'E'), 'Õ', 'O'), 'Ã', 'A'), 'Û', 'U'), 'Ô', 'O'), 
+'Î', 'I'), 'Ê', 'E'), 'Â', 'A'), 'Ù', 'U'), 'Ò', 'O'), 'Ì', 'I'), 'È', 'E'), 'À', 'A'), 'Ú', 'U'), 'Ó', 'O'), 'Í', 'I'), 'É', 'E'), 'Ç', 
+'C'), 'Á', 'A'), 'Ÿ', 'Y'), 'Ž', 'Z'), 'Š', 'S')))</Script>
+</Registro>
+<Registro>
+<Data>2016-09-16 09:42:02</Data>
+<Observacoes>atualizado campo da cidade da pessoa</Observacoes>
+<Script>update rhpessoas set rhpessoas.cidade = 
+(select rhmunicipios.cidade from rhmunicipios where rhmunicipios.UF = rhpessoas.UF and UPPER (REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(  
+REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+REPLACE(REPLACE(REPLACE(UPPER(rhpessoas.cidade), 'Ý', 'Y'), 'Ñ', 'N'), 'Ö', 'O'), 'Ï', 'I'), 'Ü', 'U'), 'Ë', 'E'), 'Õ', 'O'), 'Ã', 'A'), 'Û', 'U'), 'Ô', 'O'), 
+'Î', 'I'), 'Ê', 'E'), 'Â', 'A'), 'Ù', 'U'), 'Ò', 'O'), 'Ì', 'I'), 'È', 'E'), 'À', 'A'), 'Ú', 'U'), 'Ó', 'O'), 'Í', 'I'), 'É', 'E'), 'Ç', 
+'C'), 'Á', 'A'), 'Ÿ', 'Y'), 'Ž', 'Z'), 'Š', 'S')) = UPPER (REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(  
+REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+REPLACE(REPLACE(REPLACE(UPPER(rhmunicipios.cidade), 'Ý', 'Y'), 'Ñ', 'N'), 'Ö', 'O'), 'Ï', 'I'), 'Ü', 'U'), 'Ë', 'E'), 'Õ', 'O'), 'Ã', 'A'), 'Û', 'U'), 'Ô', 'O'), 
+'Î', 'I'), 'Ê', 'E'), 'Â', 'A'), 'Ù', 'U'), 'Ò', 'O'), 'Ì', 'I'), 'È', 'E'), 'À', 'A'), 'Ú', 'U'), 'Ó', 'O'), 'Í', 'I'), 'É', 'E'), 'Ç', 
+'C'), 'Á', 'A'), 'Ÿ', 'Y'), 'Ž', 'Z'), 'Š', 'S')) limit 1)
+where rhpessoas.cidade is not null and 
+exists ( select rhmunicipios.cidade from rhmunicipios where rhmunicipios.UF = rhpessoas.UF and UPPER (REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(  
+REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+REPLACE(REPLACE(REPLACE(UPPER(rhpessoas.cidade), 'Ý', 'Y'), 'Ñ', 'N'), 'Ö', 'O'), 'Ï', 'I'), 'Ü', 'U'), 'Ë', 'E'), 'Õ', 'O'), 'Ã', 'A'), 'Û', 'U'), 'Ô', 'O'), 
+'Î', 'I'), 'Ê', 'E'), 'Â', 'A'), 'Ù', 'U'), 'Ò', 'O'), 'Ì', 'I'), 'È', 'E'), 'À', 'A'), 'Ú', 'U'), 'Ó', 'O'), 'Í', 'I'), 'É', 'E'), 'Ç', 
+'C'), 'Á', 'A'), 'Ÿ', 'Y'), 'Ž', 'Z'), 'Š', 'S')) = UPPER (REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(  
+REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+REPLACE(REPLACE(REPLACE(UPPER(rhmunicipios.cidade), 'Ý', 'Y'), 'Ñ', 'N'), 'Ö', 'O'), 'Ï', 'I'), 'Ü', 'U'), 'Ë', 'E'), 'Õ', 'O'), 'Ã', 'A'), 'Û', 'U'), 'Ô', 'O'), 
+'Î', 'I'), 'Ê', 'E'), 'Â', 'A'), 'Ù', 'U'), 'Ò', 'O'), 'Ì', 'I'), 'È', 'E'), 'À', 'A'), 'Ú', 'U'), 'Ó', 'O'), 'Í', 'I'), 'É', 'E'), 'Ç', 
+'C'), 'Á', 'A'), 'Ÿ', 'Y'), 'Ž', 'Z'), 'Š', 'S')))</Script>
+</Registro>
+<Registro>
+<Data>2016-09-26 11:50:01</Data>
+<Observacoes>Atualizada versão mínima necessária do currículo web</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.8', DataVersao = '2016-09-23';</Script>
+</Registro>
+<Registro>
+<Data>2016-11-18 16:21:01</Data>
+<Observacoes>atualizada versão mínima do currículo web</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.9', DataVersao = '2016-12-02';</Script>
+</Registro>
+<Registro>
+<Data>2017-11-03 10:00:00</Data>
+<Observacoes>Alterada versão do sistema complementar.</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.10', DataVersao = '2017-11-03';</Script>
+</Registro>
+<Registro>
+<Data>2017-11-14 10:00:00</Data>
+<Observacoes>Campo para Usar HTTPS</Observacoes>
+<Script>ALTER TABLE rhcandidatoswebconf ADD UsaHttps CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2017-11-14 10:01:00</Data>
+<Observacoes>Inicialização do campo UsaHttps</Observacoes>
+<Script>Update rhcandidatoswebconf Set UsaHttps = '2' Where UsaHttps Is Null;</Script>
+</Registro>
+<Registro>
+<Data>2017-11-14 14:09:00</Data>
+<Observacoes>Inclusão do campo UsaHttps em RHCandidatosWebConf</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.11', DataVersao = '2017-11-17';</Script>
+</Registro>
+<Registro>
+<Data>2018-03-23 18:05:05</Data>
+<Observacoes>Campo para obrigar ou não o preenchimento dos capos de PIS.</Observacoes>
+<Script>ALTER TABLE rhpessoas ADD PossuiPIS CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2018-03-23 18:05:06</Data>
+<Observacoes>Inicialização de campo para obrigar o preenchimento dos campos de PIS.</Observacoes>
+<Script>Update rhpessoas Set PossuiPIS = 'S' Where PossuiPIS Is Null;</Script>
+</Registro>
+<Registro>
+<Data>2018-03-23 18:05:07</Data>
+<Observacoes>Criação de campos do PIS.</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.12', DataVersao = '2018-03-23';</Script>
+</Registro>
+<Registro>
+<Data>2018-10-04 07:50:00</Data>
+<Observacoes>Criação do campo DataInscricao para armazenar a data da inscrição de candidato em vaga selecionada.</Observacoes>
+<Script>ALTER TABLE rhrequisicoesturma ADD DataInscricao DATE;</Script>
+</Registro>
+<Registro>
+<Data>2018-10-04 07:50:01</Data>
+<Observacoes>alterada versão pela criação de novo campo na tabela RHREQUISICOESTURMA.</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.13', DataVersao = '2018-10-05';</Script>
+</Registro>
+<Registro>
+<Data>2018-10-18 09:16:00</Data>
+<Observacoes>Criado campo Descricao80 na tabela rhvariaveis</Observacoes>
+<Script>ALTER TABLE rhvariaveis ADD COLUMN Descricao80 VARCHAR(80) NULL DEFAULT NULL;</Script>
+</Registro>
+<Registro>
+<Data>2018-10-18 09:17:00</Data>
+<Observacoes>Inicializado campo Descricao80 com a informação do campo Descricao40 de rhvariaveis</Observacoes>
+<Script>Update rhvariaveis set Descricao80 = Descricao40 where Descricao80 is null;</Script>
+</Registro>
+<Registro>
+<Data>2018-10-18 09:18:00</Data>
+<Observacoes>Incluído campo para identificar de candidato está inscrito ou não na requisição.</Observacoes>
+<Script>ALTER TABLE rhrequisicoesturma ADD CandidatoInscrito CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2018-10-18 09:19:00</Data>
+<Observacoes>Inicializado campo CandidatoInscrito para os candidatos cadastrados.</Observacoes>
+<Script>Update rhrequisicoesturma Set CandidatoInscrito = 'S' Where CandidatoInscrito Is Null;</Script>
+</Registro>
+<Registro>
+<Data>2018-10-18 09:20:00</Data>
+<Observacoes>Versão 1.14 devido a criação dos campos novos Data de Inscrição e Remoção da Candidatura da vaga.</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.14', DataVersao = '2018-10-19';</Script>
+</Registro>
+<Registro>
+<Data>2018-10-18 09:21:00</Data>
+<Observacoes>Tabela para salvar os anexos das pessoas</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhpessoasanexos` ( `Empresa` varchar(4) NOT NULL, `Pessoa` int(8) NOT NULL, `ArquivoBlob` blob, `NomeArquivo` varchar(250), PRIMARY KEY (`Empresa`, `Pessoa`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Anexos das Pessoas';</Script>
+</Registro>
+<Registro>
+<Data>2018-10-18 09:22:00</Data>
+<Observacoes>Criado campo tipo do arquivo anexado</Observacoes>
+<Script>ALTER TABLE rhpessoasanexos ADD TipoArquivo varchar(50);</Script>
+</Registro>
+<Registro>
+<Data>2018-10-18 09:23:00</Data>
+<Observacoes>Versão para incluir anexo no currículo</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.15', DataVersao = '2018-10-19';</Script>
+</Registro>
+<Registro>
+<Data>2020-05-07 17:18:00</Data>
+<Observacoes>Alterado tamanho do campo que salva o anexo</Observacoes>
+<Script>ALTER TABLE rhpessoasanexos MODIFY ArquivoBlob LONGBLOB;</Script>
+</Registro>
+<Registro>
+<Data>2020-09-30 09:39:00</Data>
+<Observacoes>Campo para o termo de consentimento no CW</Observacoes>
+<Script>ALTER TABLE rhcandidatoswebconf ADD TermoHTML varchar(8000);</Script>
+</Registro>
+<Registro>
+<Data>2020-09-30 09:39:01</Data>
+<Observacoes>Campo para o aceite do termo de consentimento do candidato</Observacoes>
+<Script>ALTER TABLE rhpessoas ADD AceiteTermo CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2020-09-30 09:39:02</Data>
+<Observacoes>Atualização da versão com as alterações do aceite do termo de consentimento</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.17', DataVersao = '2020-09-30';</Script>
+</Registro>
+<Registro>
+<Data>2020-10-29 11:32:00</Data>
+<Observacoes>Incluído campo para salvar se o candidato solicitou a exclusão do CW</Observacoes>
+<Script>ALTER TABLE rhpessoas ADD Excluir CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2020-10-29 11:32:01</Data>
+<Observacoes>Inicializado campo de excluir em rhpessoas</Observacoes>
+<Script>Update rhpessoas Set Excluir = 'N' Where Excluir Is Null;</Script>
+</Registro>
+<Registro>
+<Data>2020-10-29 11:32:02</Data>
+<Observacoes>Nova diretriz do CW para salvar o texto de exclusão que será mostrado quando o candidato solicitar a exclusão no CW</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb) Values ('mensagemExclusao', 'Mensagem da página de exclusão do currículo', 'T');</Script>
+</Registro>
+<Registro>
+<Data>2020-10-29 11:32:03</Data>
+<Observacoes>Nova diretriz do CW para salvar o texto de exclusão que será enviado por e-mail quando o candidato for excluído.</Observacoes>
+<Script>Insert Into rhdiretrizescvwebdef(DiretrizWeb, Descricao80, TipoDiretrizWeb) Values ('mensagemExclusaoEmail', 'Mensagem que será enviada por e-mail na exclusão do currículo', 'T');</Script>
+</Registro>
+<Registro>
+<Data>2020-10-29 11:32:04</Data>
+<Observacoes>Atualizada a versão com a impelementação da exclusão do candidato no CW</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.18', DataVersao = '2020-12-04';</Script>
+</Registro>
+<Registro>
+<Data>2020-11-24 13:58:00</Data>
+<Observacoes>Criação de nova tabela para salvar os campos ocultos</Observacoes>
+<Script>CREATE TABLE IF NOT EXISTS `rhcamposwebinv` (
+  `Empresa` varchar(4) NOT NULL,
+  `IdCampoInv` int(3) NOT NULL,
+  PRIMARY KEY (`Empresa`, `IdCampoInv`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Campos Ocultos';</Script>
+</Registro>
+<Registro>
+<Data>2020-11-24 13:58:01</Data>
+<Observacoes>Inclusão do campo sexo nos campos configuráveis</Observacoes>
+<Script>INSERT INTO `rhdicionariocampoobr` (`IdCampoObr`, `Tabela`, `CampoTabela`, `Descricao60`) VALUES (39, 'RHPESSOAS', 'SEXO', 'Sexo');</Script>
+</Registro>
+<Registro>
+<Data>2020-11-24 13:58:02</Data>
+<Observacoes>Inclusão do campo possui deficiência nos campos configuráveis</Observacoes>
+<Script>INSERT INTO `rhdicionariocampoobr` (`IdCampoObr`, `Tabela`, `CampoTabela`, `Descricao60`) VALUES (40, 'RHPESSOAS', 'DEFICIENTEFISICO', 'Possui Deficiência');</Script>
+</Registro>
+<Registro>
+<Data>2020-11-24 13:58:03</Data>
+<Observacoes>Inclusão do campo cep nos campos configuráveis</Observacoes>
+<Script>INSERT INTO `rhdicionariocampoobr` (`IdCampoObr`, `Tabela`, `CampoTabela`, `Descricao60`) VALUES (41, 'RHPESSOAS', 'CEP', 'CEP');</Script>
+</Registro>
+<Registro>
+<Data>2020-11-24 13:58:04</Data>
+<Observacoes>Inclusão do campo anexo nos campos configuráveis</Observacoes>
+<Script>INSERT INTO `rhdicionariocampoobr` (`IdCampoObr`, `Tabela`, `CampoTabela`, `Descricao60`) VALUES (42, 'RHPESSOASANEXOS', 'ARQUIVOBLOB', 'Anexo');</Script>
+</Registro>
+<Registro>
+<Data>2020-11-24 13:58:05</Data>
+<Observacoes>Inclusão do campo foto nos campos configuráveis</Observacoes>
+<Script>INSERT INTO `rhdicionariocampoobr` (`IdCampoObr`, `Tabela`, `CampoTabela`, `Descricao60`) VALUES (43, 'RHPESSOFOTOS', 'FOTO', 'Foto');</Script>
+</Registro>
+<Registro>
+<Data>2020-12-07 10:50:00</Data>
+<Observacoes>Inclusão do campo Sexo na lista dos campos obrigatórios.</Observacoes>
+<Script>Insert 
+Into 
+  rhcamposwebobr 
+Select Distinct 
+  rhcandidatoswebconf.Empresa, 
+  39 
+From 
+  rhcandidatoswebconf 
+Inner Join rhcamposwebobr A On 
+  rhcandidatoswebconf.Empresa = A.Empresa;</Script>
+</Registro>
+<Registro>
+<Data>2020-12-07 10:50:01</Data>
+<Observacoes>Inclusão do campo Possui Deficiência na lista dos campos obrigatórios.</Observacoes>
+<Script>Insert 
+Into 
+  rhcamposwebobr 
+Select Distinct 
+  rhcandidatoswebconf.Empresa, 
+  40 
+From 
+  rhcandidatoswebconf 
+Inner Join rhcamposwebobr A On 
+  rhcandidatoswebconf.Empresa = A.Empresa;</Script>
+</Registro>
+<Registro>
+<Data>2020-12-07 10:50:02</Data>
+<Observacoes>Inclusão do campo CEP na lista dos campos obrigatórios.</Observacoes>
+<Script>Insert 
+Into 
+  rhcamposwebobr 
+Select Distinct 
+  rhcandidatoswebconf.Empresa, 
+  41
+From 
+  rhcandidatoswebconf 
+Inner Join rhcamposwebobr A On 
+  rhcandidatoswebconf.Empresa = A.Empresa;</Script>
+</Registro>
+<Registro>
+<Data>2020-12-09 16:58:00</Data>
+<Observacoes>Quando a flag Exibir Pretensão Salarial está desmarcada, o campo será incluído na lista dos campos selecionados para não aparecer no CW, pois esta flag não será mais utilizada.</Observacoes>
+<Script>Insert 
+Into 
+  rhcamposwebinv 
+Select Distinct 
+  rhcandidatoswebconf.Empresa, 
+  7 
+From 
+  rhcandidatoswebconf 
+Where 
+  rhcandidatoswebconf.ExibirPretensaoSal = 'N';</Script>
+</Registro>
+<Registro>
+<Data>2020-12-09 16:58:01</Data>
+<Observacoes>Quando a flag Exibir Deficiente Físico está desmarcada, o campo será incluído na lista dos campos selecionados para não aparecer no CW, pois esta flag não será mais utilizada.</Observacoes>
+<Script>Insert 
+Into 
+  rhcamposwebinv 
+Select Distinct 
+  rhcandidatoswebconf.Empresa, 
+  39 
+From 
+  rhcandidatoswebconf 
+Where 
+  rhcandidatoswebconf.ExibirDeficiente= 'N';</Script>
+</Registro>
+<Registro>
+<Data>2020-12-10 17:29:00</Data>
+<Observacoes>Removido campo E-mail da lista dos campos obrigatórios configuráveis, pois ele sempre deve ser obrigatório.</Observacoes>
+<Script>Delete From rhcamposwebobr Where IdCampoObr = 27;</Script>
+</Registro>
+<Registro>
+<Data>2020-12-10 17:29:01</Data>
+<Observacoes>Removido campo E-mail dos campos configuráveis</Observacoes>
+<Script>Delete From rhdicionariocampoobr Where IdCampoObr = 27;</Script>
+</Registro>
+<Registro>
+<Data>2020-12-10 17:29:02</Data>
+<Observacoes>Alterada versão do CW para:
+- Tratar novos campos nas obrigatpriedades e campos ocultos
+- Tratar a inclusão do Sexo, Possui Deficiência e CEP na lista dos campos obrigatórios
+- Tratar campos Pretensão Salarial e Possui Deficiência apenas nos campos configuráveis</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.19', DataVersao = '2021-01-22';</Script>
+</Registro>
+<Registro>
+<Data>2021-01-18 10:06:00</Data>
+<Observacoes>Aumentado campo E-mail para 80 caracteres, como é no sistema SIRH.</Observacoes>
+<Script>ALTER TABLE rhpessoas MODIFY Email VARCHAR(80);</Script>
+</Registro>
+<Registro>
+<Data>2021-01-22 10:40:00</Data>
+<Observacoes>Aumentado tamanho do campo Consentimento no CW.</Observacoes>
+<Script>ALTER TABLE rhcandidatoswebconf MODIFY TermoHTML LONGTEXT;</Script>
+</Registro>
+<Registro>
+<Data>2021-02-08 08:40:00</Data>
+<Observacoes>Usa quantidade mínima de caracteres na senha</Observacoes>
+<Script>ALTER TABLE rhcandidatoswebconf ADD MinimoCaracteres INT;</Script>
+</Registro>
+<Registro>
+<Data>2021-02-08 08:40:01</Data>
+<Observacoes>Usa letras e números na senha</Observacoes>
+<Script>ALTER TABLE rhcandidatoswebconf ADD UsaLetrasNumeros CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2021-02-08 08:40:02</Data>
+<Observacoes>Usa caracteres especiais na senha</Observacoes>
+<Script>ALTER TABLE rhcandidatoswebconf ADD UsaCaracteresEspeciais CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2021-02-08 08:40:03</Data>
+<Observacoes>Usa maiúsculas e minúsculas na senha</Observacoes>
+<Script>ALTER TABLE rhcandidatoswebconf ADD UsaMaiusculasMinusculas CHAR(1);</Script>
+</Registro>
+<Registro>
+<Data>2021-02-08 08:40:04</Data>
+<Observacoes>Atualizada versão do CW pois foram criados os campos de política de senha</Observacoes>
+<Script>Update rhversaocvweb Set VersaoSistema = '1.20', DataVersao = '2021-02-19';</Script>
+</Registro>
+</Inicio>

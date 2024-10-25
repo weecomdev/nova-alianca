@@ -1,0 +1,13 @@
+.breadcrumb { margin-bottom:0; }
+.page-header { margin-bottom:20px; }
+.pagination { text-align:center; }
+.date { width:75px; text-align:center; }
+.relative{position:relative;}
+
+.al-center { text-align:center !important; }
+.al-left { text-align:left !important; }
+.al-right { text-align:right !important; }
+
+.table th, .table td { vertical-align:middle; }
+
+body.start { background:url(http://www.deen.com.br/_internal/bg_cms.jpg) no-repeat center top; }

@@ -1,0 +1,222 @@
+﻿.alinhamento {
+	margin: 0px 30px 0px 30px; padding-top: 30px;
+}
+
+.bem-vindo {
+	padding-top: 20px; 
+    padding-bottom: 50px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+body {	
+	background: url(../images/background-login.jpg) repeat top;
+	background-attachment: fixed; font-family: Arial; font-size: 12px;
+}
+
+.borda-tabela {
+	padding: 2px;
+	background: white;
+}
+
+.box-bottom {
+	width: 701px; height: 8px;	
+	background: url('../images/box-bottom.jpg') no-repeat center;
+}
+
+.box-bottom-vagas-disponiveis {
+	width: 371px; height: 8px;	
+	background: url('../images/box-bottom-vagas-disponiveis.jpg') no-repeat center;
+}
+
+.box-cadastrar {
+	background: url('../images/box-cadastrar.jpg') no-repeat top center;
+	width: 400px; height: 180px; margin-left: 200px; 
+}
+
+.box-cadastrar-atualizar {
+	width: 312px; height: 87px;
+	background: #FFFFFF url('../images/box-cadastrar-atualizar.jpg') no-repeat;
+}
+
+.box-cadastrar-atualizar-content {
+	padding-left: 110px; padding-top: 25px;	
+    font-size: 11px;
+    font-weight: bold
+}
+
+.box-middle {
+	width: 701px;	
+	background: url('../images/box-middle.jpg') repeat-y center;
+}
+
+.box-middle-content {
+	padding: 10px 20px 10px 20px;	
+}
+
+.box-middle-vagas-disponiveis {
+	width: 371px;	
+	background: url('../images/box-middle-vagas-disponiveis.jpg') repeat-y center;
+}
+
+.box-top {
+	width: 701px; height: 8px;	
+	background: url('../images/box-top.jpg') no-repeat center;
+}
+
+.box-top-vagas-disponiveis {
+	width: 371px; height: 8px;	
+	background: url('../images/box-top-vagas-disponiveis.jpg') no-repeat center;
+}
+
+.check {
+	width: 165px; text-align: left; float: left; margin-bottom: 15px;
+}
+
+.content {
+    height: 900px;
+	margin-left: 30px; margin-right: 30px;
+	background: #FFFFFF;
+}
+
+.content-vaga {
+    height: 800px;
+	margin-left: 30px; margin-right: 30px;
+	background: #FFFFFF;
+}
+
+.content-interna {
+	margin-left: 30px; margin-right: 30px;
+	background: #FFFFFF;
+}	
+
+.detalhe-vaga-box {
+	padding: 2px; border: 1px solid #E0E0E0;
+	background: white; margin-top: 20px;
+}
+
+fieldset {
+	border: 1px dotted #CCCCCC; padding: 7px;
+}
+
+fieldset legend{
+	font-size: 14px; padding-left: 10px; padding-right: 10px;
+}
+
+.float350 {
+	width: 350px; float: left;
+}
+
+.home {
+	height: 850px; padding-top: 30px;
+}
+
+.informacoes-academicas {
+	margin: 0px;	
+}
+
+.informacoes-academicas td{
+	padding: 5px 5px 5px 5px; vertical-align: middle;
+	background: #FCFCFC;
+	border: 1px solid #FFFFFF; border-collapse: collapse;
+}
+
+.informacoes-academicas th{
+	color: white; font-weight: normal;
+	padding: 5px; text-align: left; border: 1px solid #F5F5F5; border-collapse: collapse;
+}
+
+.label-campos {
+	width: 110px; float: left; text-align: right; margin-right: 5px;
+}
+
+.label-campos2 {
+	width: 145px; float: left; text-align: right; margin-right: 5px;
+}
+
+.label-campos3 {
+	width: 200px; float: left; text-align: right; margin-right: 5px;
+}
+
+.listagem-campos {
+	margin-bottom: 10px; clear: both; height: 100%;
+}
+
+.logotipo {
+	padding-top: 20px; padding-bottom: 50px;
+}
+
+.migalha {
+	background: url('../images/back-migalha.jpg') no-repeat center center; height: 26px;
+	font-size: 11px; text-transform: uppercase; margin-bottom: 15px; color: #797979; padding-left: 10px;
+}
+
+.migalha-ativa {
+	font-size: 11px; font-weight: bold;
+	text-decoration: underline;
+}
+
+.migalha-align {
+	float: left; margin-top: 6px;
+}
+
+.rodape {
+	padding: 20px; margin-left: 30px; margin-right: 30px; background: url('../images/metadados.jpg') no-repeat right center;
+}
+
+.seta {
+	width: 6px; height: 8px; float: left; margin: 9px 4px 0px 4px;
+}
+
+textarea {
+	font-family: Arial;
+}
+
+.vagas-disponiveis {
+    margin: 0 auto;
+    width: 50%;
+}	
+
+.vagas-disponiveis th{
+	padding: 3px;
+}
+
+.vagas-disponiveis-dados-tabela td{
+	border-bottom: 1px solid white; padding: 3px;
+}
+
+.vagas-disponiveis-dados {
+	height: 245px; overflow: auto;
+}
+
+.vaga-descricao {
+	float: left; width: 325px;
+}
+
+.vaga-candidatar {
+	float: left; width: 325px; text-align: center; margin-top: 30px;
+}
+
+.vaga-titulo {
+	font-size: 16px; margin-bottom: 10px;
+}
+
+.vaga-tabela {
+	margin: 10px 0px 10px 0px;
+}
+
+.vaga-tabela th{
+	width: 160px; color: #9A9A9A; text-align: right; padding: 7px;
+}
+
+.vaga-tabela td{
+	padding: 5px; text-align: left;
+}
+
+.vaga-tabela tr{
+	margin-bottom: 5px;
+}
+
+.cabecalho {	
+	height: 0px;
+}

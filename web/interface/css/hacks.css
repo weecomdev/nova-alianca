@@ -1,0 +1,41 @@
+/* ============================================================================================================================= */
+/* Hacks IE6 */
+
+/* min-height */
+
+* Html #conteudo { height: 320px; }
+* Html #conteudo.produto Ul.listar Li { height: 300px; } 
+
+/* background alternativo GIF */
+
+* Html #topo #cabecalho { background-image: url(../imagens/topo_desenho.gif); }
+
+/* margin duplo */
+
+* Html #conteudo.confraria #thumb Ul Li { display: inline; }
+* Html #conteudo Form Fieldset { display: inline; width: 44%; }
+
+/* first-child */
+
+* Html #topo #cabecalho Ul, * Html #topo #menu Ul { overflow: hidden; }
+* Html #topo #cabecalho Ul Li, * Html #topo #menu Ul Li { margin-left: -1px; }
+
+/* PNG Transparente */
+
+* Html #topo #cabecalho A#logo {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop, src='interface/imagens/topo_logo.png');
+}
+* Html #rodape A#cdi {
+	background-image: none; height: 10px; margin: 10px 0px; cursor: pointer;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop, src='interface/imagens/rodape_cdi.png');
+}
+* Html #topo #cabecalho Fieldset Input {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale, src='interface/imagens/aplha_30.png');
+}
+* Html #conteudo.home #painel Dl {
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale, src='interface/imagens/aplha_60.png');
+}
+
